@@ -27,6 +27,7 @@ classes:
 - system.aptly.server.mirror.ubuntu.xenial.mcp.apt_mk.grafana
 - system.aptly.server.mirror.ubuntu.xenial.mcp.apt_mk.saltstack.salt-2016-3
 - system.git.server.single
+- system.linux.system.single.debian
 - service.docker.host
 - system.docker.client
 - service.docker.registry
@@ -392,10 +393,6 @@ parameters:
     server:
        directory: /srv/git/
        repos:
-        - name: gerritlib
-          url: https://github.com/openstack-infra/gerritlib.git
-        - name: jeepyb
-          url: https://github.com/openstack-infra/jeepyb.git
         - name: mk-pipelines
           url: https://gerrit.mcp.mirantis.net/mk/mk-pipelines.git
         - name: pipeline-library
@@ -405,18 +402,6 @@ parameters:
   nginx:
     server:
       site:
-        pip_server:
-          enabled: true
-          type: nginx_static
-          name: pip_server
-          root: /srv/pypi_mirror/packages/simple
-          autoindex: True
-          access_policy:
-            allow:
-            - all
-          host:
-            name: pipy.mcp-offline-lab.local
-            port: 8084
         http_server:
           enabled: true
           type: nginx_static
@@ -457,11 +442,6 @@ parameters:
           mode: 755
           makedirs: true
         /srv/scripts/:
-          user: root
-          group: root
-          mode: 755
-          makedirs: true
-        /srv/pypi_mirror/packages/:
           user: root
           group: root
           mode: 755
