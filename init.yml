@@ -34,7 +34,7 @@ classes:
 - service.docker.host
 - system.docker.swarm.manager
 - system.docker.swarm.master
-- cluster.mcp-offline.infra.docker-registry
+- cluster.mcp-offline.infra.mirror.docker-registry
 - service.docker.host
 parameters:
   _param:

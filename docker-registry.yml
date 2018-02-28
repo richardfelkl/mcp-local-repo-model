@@ -1,0 +1,22 @@
+# simplifyed version of system.docker.swarm.stack.docker
+parameters:
+  _param:
+    docker_image_registry: registry:2
+    docker_stack_registry_replicas: 1
+  docker:
+    client:
+      stack:
+        docker:
+          service:
+            registry:
+              environment:
+                REGISTRY_HTTP_SECRET: ${_param:docker_registry_http_secret}
+              deploy:
+                replicas: ${_param:docker_stack_registry_replicas}
+                restart_policy:
+                  condition: any
+              image: ${_param:docker_image_registry}
+              ports:
+                - 15000:5000
+              volumes:
+                - "/srv/volumes/registry:/var/lib/registry"
