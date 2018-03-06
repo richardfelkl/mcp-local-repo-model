@@ -242,7 +242,6 @@ parameters:
             distributions:
             - ubuntu-xenial/stable
         mirantis_openstack_xenial_glusterfs:
-          components: '3.8'
           publisher:
             distributions:
             - ubuntu-xenial/glusterfs/stable
