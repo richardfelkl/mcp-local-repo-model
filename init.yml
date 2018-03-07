@@ -399,9 +399,9 @@ parameters:
        directory: /srv/git/
        repos:
         - name: mk-pipelines
-          url: https://gerrit.mcp.mirantis.net/mk/mk-pipelines.git
+          url: https://github.com/Mirantis/mk-pipelines.git
         - name: pipeline-library
-          url: https://gerrit.mcp.mirantis.net/mcp-ci/pipeline-library.git
+          url: https://github.com/Mirantis/pipeline-library.git
         - name: rundeck-cis-jobs
           url: https://github.com/Mirantis/rundeck-cis-jobs.git
   nginx:
