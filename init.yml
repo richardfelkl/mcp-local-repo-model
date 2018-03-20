@@ -134,7 +134,22 @@ parameters:
       XRqg8z44wtlroFTrnR+DgqplsellsrM+xGtZb9VrjFLeP89jzhrBWgE=
       =GLje
       -----END PGP PUBLIC KEY BLOCK-----
-
+  debmirror:
+    client:
+      enabled: true
+      mirrors:
+        mirror_mirantis_com_td-agent:
+          force: False
+          lock_target: True
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
+          method: "rsync"
+          arch: [ 'amd64' ]
+          mirror_host: "mirror.mirantis.com"
+          mirror_root: ":mirror/nightly/td-agent/xenial/"
+          target_dir: "/srv/volumes/aptly/public/td-agent/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_td-agent.log"
+          dist: [ xenial ]
+          section: [ contrib ]
   aptly:
     server:
       mirror_update:
