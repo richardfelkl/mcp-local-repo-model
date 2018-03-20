@@ -39,7 +39,7 @@ classes:
 - service.docker.host
 parameters:
   _param:
-    apt_mk_version: 'proposed'
+    apt_mk_version: '2018.1'
     aptly_gpg_keypair_id: A8272E04
     aptly_gpg_passphrase: ""
     aptly_server_secure: true
